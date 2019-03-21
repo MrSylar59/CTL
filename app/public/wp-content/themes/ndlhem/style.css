@@ -206,11 +206,16 @@
     }
   }
 
-  .page_item{
-    list-style: none;
+  body{
+    margin-bottom: 50px;
   }
 
-  .page_item > a{
+  .menu-item{
+    list-style: none;
+    margin-bottom: 2px;
+  }
+
+  .menu-item > a{
     padding: 12px 20px;
     border: 1px solid #dbdbdb;
     background-color: white;
@@ -219,13 +224,13 @@
     color: #495057;
   }
 
-  .page_item > a:hover{
+  .menu-item > a:hover{
     background-color: rgb(233, 233, 233);
     cursor: pointer;
     text-decoration: none;
   }
 
-  .page_item > a:active{
+  .menu-item > a:active{
     background-color: rgb(219, 219, 219);
   }
 
