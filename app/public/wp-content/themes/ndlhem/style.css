@@ -192,8 +192,51 @@
   }
 
   footer {
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(159, 189, 253, 0.363);
-      min-height:1hv;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(159, 189, 253, 0.363);
+    z-index: 9999;
+  }
+
+  @media screen and (max-width: 640px){
+    footer {
+      font-size: .8em;
+    }
+  }
+
+  .page_item{
+    list-style: none;
+  }
+
+  .page_item > a{
+    padding: 12px 20px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    width:100%;
+    display: block;
+    color: #495057;
+  }
+
+  .page_item > a:hover{
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .page_item > a:active{
+    background-color: rgb(219, 219, 219);
+  }
+
+  .current_page_item > a {
+    background-color: rgb(222, 255, 244);
+  }
+
+  .current_page_item > a:hover {
+    background-color: rgb(212, 255, 241);
+  }
+
+  .current_page_item > a:active {
+    background-color: rgb(198, 255, 236);
   }

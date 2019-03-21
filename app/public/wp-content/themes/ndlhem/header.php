@@ -13,7 +13,7 @@
                 <div class="container">
                     <a class="navbar-brand" href="<? echo site_url() ?>">
                         <img src="<? echo get_theme_file_uri('/img/logo.png') ?>" class="img-fluid mr-1" style="width: 70px;height: auto;" alt="Logo NDL">
-                        Ecole Notre Dame de Lourdes Saint-Corneille
+                        <? bloginfo('name') ?>
                     </a>
                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -24,6 +24,11 @@
                             <a href="#" class="login">Préinsciption</a>
                             <a class="btn btn-light action-button" role="button" href="#">Connexion</a>
                         </span>
+
+                        <div class="d-block d-lg-none text-center" style="margin-bottom:5px;">
+                            <? wp_nav_menu(['theme_location' => 'headerMenuLocation']) ?>
+                        </div>
+
                     </div>
                 </div>
             </nav>

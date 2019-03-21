@@ -9,3 +9,10 @@ function ndl_import_files(){
     wp_enqueue_script('ndl_bootstrapJS', get_theme_file_uri('/js/bootstrap.bundle.js'), ['jquery'], '4.0', true);
 }
 add_action('wp_enqueue_scripts', 'ndl_import_files');
+
+function ndl_features(){
+    add_theme_support('title-tag');
+    // Pour créer des menus dynamiques avec wordpress
+    register_nav_menu('headerMenuLocation', 'Menu de navigation principal');
+}
+add_action('after_setup_theme', 'ndl_features');
