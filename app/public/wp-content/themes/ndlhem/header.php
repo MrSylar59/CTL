@@ -21,8 +21,8 @@
                     </button>
                     <div class="collapse navbar-collapse text-right d-md-flex justify-content-md-end" id="navcol-1">
                         <span class="navbar-text actions"> 
-                            <a href="#" class="login">Préinsciption</a>
-                            <a class="btn btn-light action-button" role="button" href="#">Connexion</a>
+                            <a href="/wp-register.php" class="login">Insciption</a>
+                            <a class="btn btn-light action-button" role="button" href="/wp-login.php">Connexion</a>
                         </span>
 
                         <div class="d-block d-lg-none text-center" style="margin-bottom:5px;">
