@@ -21,3 +21,16 @@ function ndl_login(){
     wp_enqueue_style('ndl_login_style', get_theme_file_uri('/css/login.css'));
 }
 add_action('login_enqueue_scripts', 'ndl_login');
+
+// Fonction qui redirige les admins vers le panel et les utilisateurs sur la front page
+function ndl_login_redirect($redirect_to, $request, $user){
+    if (isset($user->roles) && is_array($user->roles)){
+        // On vérifie le rôle de l'utilisateur
+        if (in_array('subscriber', $user->roles)){
+            $redirect_to = home_url();
+        }
+    }
+
+    return $redirect_to;
+}
+add_filter('login_redirect', 'ndl_login_redirect', 10, 3);
