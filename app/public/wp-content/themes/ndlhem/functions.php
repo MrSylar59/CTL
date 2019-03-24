@@ -16,3 +16,8 @@ function ndl_features(){
     register_nav_menu('headerMenuLocation', 'Menu de navigation principal');
 }
 add_action('after_setup_theme', 'ndl_features');
+
+function ndl_login(){
+    wp_enqueue_style('ndl_login_style', get_theme_file_uri('/css/login.css'));
+}
+add_action('login_enqueue_scripts', 'ndl_login');
