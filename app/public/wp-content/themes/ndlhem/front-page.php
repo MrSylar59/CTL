@@ -70,9 +70,50 @@
             </div>
 
             <!-- L'agenda -->
-            <div class="col">
-                <h5 class="text-center">Agenda du mois</h5>
-                <!-- TODO: Implémenter l'agenda -->
+            <div class="col bg-blue">
+                <h5 class="mb-4 text-center">Agenda des événements à venir</h5>
+                <?php
+                    $today = date('Ymd');
+                    $events = new WP_Query([
+                        'posts_per_page' => 5,
+                        'post_type' => 'event',
+                        'orderby' => 'meta_value_num',
+                        'meta_key' => 'event_date',
+                        'order' => 'ASC',
+                        'meta_query' => [
+                            [
+                                'key' => 'event_date',
+                                'compare' => '>=',
+                                'value' => $today,
+                                'type' => 'numeric'
+                            ]
+                        ]
+                    ]);
+
+                    while($events->have_posts()){
+                        $events->the_post();
+                        ?>
+                        <div class="row">
+                            <div class="col-12 col-md-2 col-lg-12 col-xl-2 p-xl-0">
+                                <a class="event-date" href="<? the_permalink() ?>">
+                                    <div>
+                                        <span class="event-month"><? echo date_i18n('M', strtotime(get_field('event_date')), true) ?></span>
+                                        <span class="event-day"><? echo date_i18n('d', strtotime(get_field('event_date')), true) ?></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-10 col-lg-12 col-xl-10">
+                                <h5 class="event-title"><a href="<? the_permalink() ?>"><? the_title() ?></a></h5>
+                                <p><? echo wp_trim_words(get_the_content(), 15) ?><a href="<? the_permalink() ?>">Lire la suite</a></p>
+                            </div>
+                        </div>
+                        <?php
+                    }
+
+                    wp_reset_postdata();
+                ?>
+
+                <div class="text-center"><a href="<? echo get_post_type_archive_link('event') ?>">Voir tous les événements</a></div>
             </div>
         </div>
     </div>

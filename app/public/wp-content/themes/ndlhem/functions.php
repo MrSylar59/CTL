@@ -22,6 +22,23 @@ function ndl_login(){
 }
 add_action('login_enqueue_scripts', 'ndl_login');
 
+function ndl_adjust_queries($query){
+    $today = date('Ymd');
+
+    if (!is_admin() && is_post_type_archive('event') && $query->is_main_query()) {
+        $query->set('orderby', 'meta_value_num');
+        $query->set('meta_key', 'event_date');
+        $query->set('order', 'ASC');
+        $query->set('meta_query', [[
+            'key' => 'event_date',
+            'compare' => '>=',
+            'value' => $today,
+            'type' => 'numeric'
+        ]]);
+    }
+}
+add_action('pre_get_posts', 'ndl_adjust_queries');
+
 // Fonction qui redirige les admins vers le panel et les utilisateurs sur la front page
 function ndl_login_redirect($redirect_to, $request, $user){
     if (isset($user->roles) && is_array($user->roles)){
