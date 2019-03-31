@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-10">
                         <div class="text-center"><h4 class="event-title"><a href="<? the_permalink() ?>"><? the_title() ?></a></h4></div>
-                        <p><? echo wp_trim_words(get_the_content(), 25) ?><a href="<? the_permalink() ?>">Lire la suite</a></p>
+                        <p><? echo wp_trim_words(get_the_content(), 15) ?><a href="<? the_permalink() ?>">Lire la suite</a></p>
                     </div>
                 </div>
             </div>

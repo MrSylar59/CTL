@@ -320,3 +320,25 @@
     text-decoration: none;
     transition: 0.2s;
   }
+
+  .google-map {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.google-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (min-width: 576px){
+    .google-map {
+        width: 75%;
+    }
+}
