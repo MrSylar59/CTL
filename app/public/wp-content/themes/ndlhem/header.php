@@ -21,8 +21,14 @@
                     </button>
                     <div class="collapse navbar-collapse text-right d-md-flex justify-content-md-end" id="navcol-1">
                         <span class="navbar-text actions"> 
+                            <? if (!is_user_logged_in()) { ?>
                             <a href="/wp-register.php" class="login">Inscription</a>
                             <a class="btn btn-light action-button" role="button" href="/wp-login.php">Connexion</a>
+                            <? } else { ?>
+                            <p class="text-center">Bonjour, <? echo wp_get_current_user()->user_login ?></p>
+                            <a class="login" href="#">Mon espace classe</a>
+                            <a class="login" href="<? echo wp_logout_url() ?>">Déconnexion</a>
+                            <? } ?>
                         </span>
 
                         <div class="d-block d-lg-none text-center" style="margin-bottom:5px;">

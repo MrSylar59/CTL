@@ -212,11 +212,6 @@ class ACUI_Homepage{
 		   alert("<?php _e( 'Please enter a path to the file', 'import-users-from-csv-with-meta' ); ?>");
 		   return false;
 		}
-
-		if( jQuery("[name=role\\[\\]]input:checkbox:checked").length == 0 ){
-			alert("<?php _e( 'Please select a role', 'import-users-from-csv-with-meta'); ?>");
-		   	return false;	
-		}
 	}
 
 	jQuery( document ).ready( function( $ ){

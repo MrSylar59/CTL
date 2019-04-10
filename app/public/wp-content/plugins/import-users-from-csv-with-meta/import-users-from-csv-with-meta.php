@@ -3,7 +3,7 @@
 Plugin Name:	Import users from CSV with meta
 Plugin URI:		https://www.codection.com
 Description:	This plugins allows to import users using CSV files to WP database automatically
-Version:		1.14.0.4
+Version:		1.14.0.7
 Author:			codection
 Author URI: 	https://codection.com
 License:     	GPL2
@@ -275,7 +275,7 @@ function acui_admin_tabs( $current = 'homepage' ) {
     		'columns' => __( 'Extra profile fields', 'import-users-from-csv-with-meta' ), 
     		'mail-options' => __( 'Mail options', 'import-users-from-csv-with-meta' ), 
     		'smtp-settings' => __( 'SMTP settings (deprecated)', 'import-users-from-csv-with-meta' ), 
-    		'doc' => __( 'Documentation', 'import-users-from-csv-with-meta' ),
+    		'doc' => __( 'Documentation', 'import-users-from-csv-with-meta' ), 
     );
 
     $tabs = apply_filters( 'acui_tabs', $tabs );
@@ -309,7 +309,6 @@ function acui_fileupload_process( $form_data, $is_cron = false, $is_frontend  = 
   }
 
   $path_to_file = $form_data["path_to_file"];
-  $role = $form_data["role"];
   $uploadfiles = $_FILES['uploadfiles'];
 
   if( empty( $uploadfiles["name"][0] ) ):
@@ -431,7 +430,7 @@ function acui_save_mail_template( $form_data ){
 
 	$automattic_wordpress_email = sanitize_text_field( $form_data["automattic_wordpress_email"] );
 	$subject_mail = sanitize_text_field( $form_data["subject_mail"] );
-	$body_mail = wp_kses_post( $form_data["body_mail"] );
+	$body_mail = wp_kses_post( stripslashes( $form_data["body_mail"] ) );
 	$template_id = intval( $form_data["template_id"] );
 	$email_template_attachment_id = intval( $form_data["email_template_attachment_id"] );
 

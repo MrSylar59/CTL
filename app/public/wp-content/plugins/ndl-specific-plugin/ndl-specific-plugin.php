@@ -6,6 +6,7 @@
     Version: 1.0
 */
 
+// Fonction qui défini tous les custom post types
 function ndl_post_types(){
     // On enregsitre les événements :
     register_post_type('event', [
@@ -27,3 +28,10 @@ function ndl_post_types(){
     ]);
 }
 add_action('init', 'ndl_post_types');
+
+// Fonction qui permet de cacher l'admin bar pour les non-admins
+function remove_admin_bar(){
+    if (!current_user_can('administrator') && !is_admin())
+        show_admin_bar(false);
+}
+add_action('after_setup_theme', 'remove_admin_bar');

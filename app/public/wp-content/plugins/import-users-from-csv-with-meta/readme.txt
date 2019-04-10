@@ -4,7 +4,7 @@ Donate link: https://codection.com/go/donate-import-users-from-csv-with-meta/
 Tags: csv, import, importer, meta data, meta, user, users, user meta,  editor, profile, custom, fields, delimiter, update, insert
 Requires at least: 3.4
 Tested up to: 5.1
-Stable tag: 1.14.0.4
+Stable tag: 1.14.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,7 +90,16 @@ Plugin will automatically detect:
 
 == Changelog ==
 
-= 1.14.0.3 =
+= 1.14.0.7 =
+*	Filter improved to avoid strange characters in emails
+
+= 1.14.0.6 =
+*	Notice fixed from last change
+
+= 1.14.0.5 =
+*	Role now is not required when importing
+
+= 1.14.0.4 =
 *	Fix to save email options bug (that appeared in last version)
 
 = 1.14.0.3 =
