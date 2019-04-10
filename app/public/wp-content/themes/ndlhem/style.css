@@ -360,3 +360,7 @@
     border-image-width:15px;
     border-image-outset: 9px;
   }
+
+  .carousel-inner {
+    max-height: 450px;
+  }
