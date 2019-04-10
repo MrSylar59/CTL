@@ -4,7 +4,7 @@
 <!-- Message d'accueil -->
 <div class="mb-4">
     <div class="container-fluid">
-        <div class="row d-none d-lg-flex">
+        <div class="row d-none d-lg-flex main-title">
             <div class="col-4 text-center p-0 p-md-3" id="date">
                 <h6>Nous sommes le <? echo date_i18n('l j F Y') ?></h6>
                 <h6>Nous fêtons les <? echo get_fete() ?></h6>
@@ -31,8 +31,10 @@
     <div class="container-fluid">
         <div class="row mb-4">
             <div class="col d-none d-lg-block">
-                <h5 class='text-center'>Liens utiles</h5>
-                <?php wp_nav_menu(['theme_location' => 'headerMenuLocation']) ?>
+                <div class="bg-blue">
+                    <h5 class='text-center'>Liens utiles</h5>
+                    <?php wp_nav_menu(['theme_location' => 'headerMenuLocation']) ?>
+                </div>
             </div>
 
             <!-- Le carousel -->

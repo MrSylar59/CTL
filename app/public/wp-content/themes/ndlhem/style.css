@@ -183,6 +183,7 @@
   
   body {
     background-image: url("img/background.png");
+    background-position: center;
     background-color: #eaeaea;
     font-family: Arial,"Segoe UI",Roboto,sans-serif;
   }
@@ -219,16 +220,25 @@
     right: 0;
     background-color: rgba(159, 189, 253, 0.363);
     z-index: 9999;
+    font-size: .8em;
   }
 
   @media screen and (max-width: 640px){
     footer {
-      font-size: .8em;
+      font-size: .6em;
     }
+  }
+
+  .footer-text {
+    margin: 5px 0;
   }
 
   body{
     margin-bottom: 50px;
+  }
+
+  .menu {
+    padding: 0;
   }
 
   .menu-item{
@@ -268,7 +278,7 @@
   }
 
   .event-date > div{
-    background-color: rgb(37, 59, 155);
+    background-color: rgb(37, 151, 155);
     text-align: center;
     border-radius: 100%;
     width:60px;
@@ -286,7 +296,7 @@
   }
 
   .event-date > div:hover{
-    background-color: rgb(52, 81, 209);
+    background-color: rgb(52, 209, 201);
     width:63px;
     height:63px;
     padding-top: 9.5px;
@@ -310,12 +320,12 @@
   }
 
   .event-title > a {
-    color: rgb(37, 59, 155);
+    color: rgb(37, 151, 155);
     transition: 0.2s;
   }
 
   .event-title > a:hover {
-    color: rgb(52, 81, 209);
+    color: rgb(52, 209, 201);
 
     text-decoration: none;
     transition: 0.2s;
@@ -329,7 +339,7 @@
     overflow: hidden;
 }
 
-.google-map iframe {
+  .google-map iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -342,3 +352,11 @@
         width: 75%;
     }
 }
+
+  .main-title {
+    border-image: url("img/border.png") 27 fill repeat;
+    background-color: white;
+    margin: 30px;
+    border-image-width:15px;
+    border-image-outset: 9px;
+  }
