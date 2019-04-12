@@ -13,7 +13,7 @@
 
             <div class="col-12 col-lg-9">
                 <div class="bg-blue container">
-                    <? if (in_array('professeur', wp_get_current_user()->roles) || current_user_can('manage_options')) { ?>
+                    <? if (wp_get_current_user()->ID == get_post()->post_author || current_user_can('manage_options')) { ?>
                         <div class="row">
                             <div class="col text-center">
                                 <h4>Options sur l'événement</h4>
@@ -23,7 +23,10 @@
                             </div>
                         </div>
                     <? } ?>
-                    <div class="text-center"><h2 class="pt-4 mb-3"><? the_title() ?></h2></div>
+                    <div class="text-center">
+                        <h2 class="pt-4 mb-3"><? the_title() ?></h2>
+                        <p class="lead"><small style="font-weight:small;"><? echo date_i18n('j M Y', strtotime(get_field('event_date')), true) ?> - Posté par <? the_author() ?></small></p>
+                    </div>
 
                     <? the_content() ?>
 
