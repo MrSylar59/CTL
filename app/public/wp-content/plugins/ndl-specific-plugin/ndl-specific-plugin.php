@@ -71,18 +71,37 @@ add_action('pre_get_posts', 'ndl_adjust_queries');
 
 // Fonction qui redirige les non-administrateurs vers le post qu'ils ont publié après publication
 function ndl_on_post_redirect($location) {
-    if (isset($_POST['save']) || isset($_POST['publish']))
+    if (isset($_POST['save']) || isset($_POST['publish'])){
         if (preg_match('/post=([0-9]*)/', $location, $match)){
-            $pl = get_permalink($match[1]);
-            if ($pl) wp_redirect($pl);
+
+            if (in_array('administrator', wp_get_current_user()->roles)){
+                wp_redirect(admin_url('/edit.php?post_type=' . get_post_type($match[1])));
+                exit;
+            }
+            else {
+                $pl = get_permalink($match[1]);
+                if ($pl) {
+                    wp_redirect($pl);
+                    exit;
+                }
+            }
         }
-    exit;
+    }
 }
 add_filter('redirect_post_location', 'ndl_on_post_redirect');
 
 // Fonction qui redirige vers la corbeille une fois qu'un événement a été supprimé
-function ndl_trash_redirect(){
-    wp_redirect(home_url('/events/'));
-    exit;
+function ndl_trash_redirect($post_id){
+    if (in_array('administrator', wp_get_current_user()->roles))
+        return;
+
+    switch (get_post_type($post_id)){
+        case 'event': 
+            wp_redirect(home_url('/events/'));
+        exit;
+        default: break;
+    }
+
+    return;
 }
 add_action('trashed_post', 'ndl_trash_redirect');
