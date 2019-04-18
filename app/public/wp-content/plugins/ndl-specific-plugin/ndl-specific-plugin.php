@@ -28,6 +28,28 @@ function ndl_post_types(){
         ],
         'supports' => ['title', 'editor']
     ]);
+
+    // On enregistre les circulaires
+    register_post_type('circulaire', [
+        'capability_type' => 'circulaire',
+        'map_meta_cap' => true,
+        'menu_icon' => 'dashicons-media-document',
+        'has_archive' => true,
+        'public' => true, 
+        'exclude_from_search' => true,
+
+        'labels' => [
+            'name' => 'Circulaires',
+            'add_new_item' => 'Ajouter une circulaire',
+            'edit_item' => 'Modifier circulaire',
+            'all_items' => 'Toutes les circulaires',
+            'singular_name' => 'Circulaire'
+        ],
+        'rewrite' => [
+            'slug' => 'circulaires'
+        ],
+        'supports' => ['title', 'custom-fields']
+    ]);
 }
 add_action('init', 'ndl_post_types');
 
