@@ -1,16 +1,15 @@
 *.log
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/mu-plugins/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
-
+/app/wp-config.php
+/app/wp-content/advanced-cache.php
+/app/wp-content/backup-db/
+/app/wp-content/backups/
+/app/wp-content/blogs.dir/
+/app/wp-content/cache/
+/app/wp-content/upgrade/
+/app/wp-content/uploads/
+/app/wp-content/mu-plugins/
+/app/wp-content/wp-cache-config.php
+/app/wp-content/plugins/hello.php
 /app/sql/
 
 /.htaccess
