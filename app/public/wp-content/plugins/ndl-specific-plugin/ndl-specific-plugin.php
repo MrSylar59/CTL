@@ -48,6 +48,7 @@ function ndl_post_types(){
         'rewrite' => [
             'slug' => 'circulaires'
         ],
+        'taxonomies'  => array( 'category' ),
         'supports' => ['title', 'custom-fields']
     ]);
 }
@@ -79,18 +80,31 @@ function classe_post_types(){
     ));
 }
 
-add_filter('pre_get_posts', 'query_post_type');
-function query_post_type($query) {
+add_filter('pre_get_posts', 'query_post_type_classe');
+function query_post_type_classe($query) {
   if( is_category() ) {
     $post_type = get_query_var('post_type');
     if($post_type)
         $post_type = $post_type;
     else
-        $post_type = array('nav_menu_item', 'post', 'classe'); // don't forget nav_menu_item to allow menus to work!
+        $post_type = array('nav_menu_item', 'post', 'classe', 'circulaire'); // don't forget nav_menu_item to allow menus to work!
     $query->set('post_type',$post_type);
     return $query;
     }
 }
+
+/*add_filter('pre_get_posts', 'query_post_type_circulaire');
+function query_post_type_circulaire($query) {
+  if( is_category() ) {
+    $post_type = get_query_var('post_type');
+    if($post_type)
+        $post_type = $post_type;
+    else
+        $post_type = array('nav_menu_item', 'post', 'circulaire'); // don't forget nav_menu_item to allow menus to work!
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}*/
 
 function add_js_scripts() {
     wp_enqueue_script( 'script', get_template_directory_uri().'/js/script.js', array('jquery'), '1.0', true );

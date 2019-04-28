@@ -17,7 +17,7 @@ INSERT INTO `wp_usermeta` VALUES
 (13,1,"wp_user_level","10"),
 (14,1,"dismissed_wp_pointers","wp496_privacy"),
 (15,1,"show_welcome_panel","1"),
-(17,1,"wp_dashboard_quick_press_last_post_id","4"),
+(17,1,"wp_dashboard_quick_press_last_post_id","52"),
 (18,1,"community-events-location","a:1:{s:2:\"ip\";s:12:\"192.168.95.0\";}"),
 (20,1,"pw_new_user_approve_has_signed_in","1554900544"),
 (21,1,"managenav-menuscolumnshidden","a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}"),
@@ -43,7 +43,6 @@ INSERT INTO `wp_usermeta` VALUES
 (45,1,"acces","a:2:{i:0;s:3:\"cm2\";i:1;s:3:\"cm1\";}"),
 (46,1,"acces","a:2:{i:0;s:3:\"cm2\";i:1;s:3:\"cm1\";}"),
 (47,1,"acces","a:2:{i:0;s:3:\"cm2\";i:1;s:3:\"cm1\";}"),
-(51,1,"session_tokens","a:2:{s:64:\"6e30d66c13ece775f8ae13a1881f50dc339ef77a5184d9b60f494cd591da79e6\";a:4:{s:10:\"expiration\";i:1555589844;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36\";s:5:\"login\";i:1555417044;}s:64:\"d1793998c9f299a6c53a1daf76efc67974de9885f193fda6efc4e278cc8bfbf0\";a:4:{s:10:\"expiration\";i:1555595753;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36\";s:5:\"login\";i:1555422953;}}"),
 (52,3,"nickname","Prof CM2"),
 (53,3,"first_name","Lucas"),
 (54,3,"last_name","Feuille"),
@@ -61,4 +60,8 @@ INSERT INTO `wp_usermeta` VALUES
 (66,3,"dismissed_wp_pointers","wp496_privacy"),
 (68,3,"pw_new_user_approve_has_signed_in","1555422884"),
 (69,3,"wp_dashboard_quick_press_last_post_id","37"),
-(70,3,"community-events-location","a:1:{s:2:\"ip\";s:12:\"192.168.95.0\";}");
+(70,3,"community-events-location","a:1:{s:2:\"ip\";s:12:\"192.168.95.0\";}"),
+(72,2,"session_tokens","a:1:{s:64:\"2180a9c9e8001c6280ece4daf0acb3ab603ea2f55f5a7fa6938ec085ce140604\";a:4:{s:10:\"expiration\";i:1556268532;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36\";s:5:\"login\";i:1556095732;}}"),
+(73,1,"session_tokens","a:1:{s:64:\"4d0d156c61c222048bd1cd7a66ff414c2e3d1da12599deef1a8322e1e57cb7c2\";a:4:{s:10:\"expiration\";i:1556357897;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.108 Safari/537.36\";s:5:\"login\";i:1556185097;}}"),
+(74,1,"closedpostboxes_circulaire","a:1:{i:0;s:9:\"submitdiv\";}"),
+(75,1,"metaboxhidden_circulaire","a:1:{i:0;s:7:\"slugdiv\";}");

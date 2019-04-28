@@ -23,18 +23,18 @@ if ( ! class_exists( 'FooGallery_PostTypes' ) ) {
 			$args = apply_filters( 'foogallery_gallery_posttype_register_args',
 				array(
 					'labels'        => array(
-						'name'               => __( 'Galleries', 'foogallery' ),
-						'singular_name'      => __( 'Gallery', 'foogallery' ),
-						'add_new'            => __( 'Add Gallery', 'foogallery' ),
-						'add_new_item'       => __( 'Add New Gallery', 'foogallery' ),
-						'edit_item'          => __( 'Edit Gallery', 'foogallery' ),
-						'new_item'           => __( 'New Gallery', 'foogallery' ),
-						'view_item'          => __( 'View Gallery', 'foogallery' ),
-						'search_items'       => __( 'Search Galleries', 'foogallery' ),
-						'not_found'          => __( 'No Galleries found', 'foogallery' ),
-						'not_found_in_trash' => __( 'No Galleries found in Trash', 'foogallery' ),
+						'name'               => __( 'Galeries', 'foogallery' ),
+						'singular_name'      => __( 'Galerie', 'foogallery' ),
+						'add_new'            => __( 'Ajouter Galerie', 'foogallery' ),
+						'add_new_item'       => __( 'Ajouter nouvelle Galerie', 'foogallery' ),
+						'edit_item'          => __( 'Editer Galerie', 'foogallery' ),
+						'new_item'           => __( 'Ajouter Galerie', 'foogallery' ),
+						'view_item'          => __( 'Voir Galerie', 'foogallery' ),
+						'search_items'       => __( 'Chercher Galeries', 'foogallery' ),
+						'not_found'          => __( 'Aucune Galerie trouvée', 'foogallery' ),
+						'not_found_in_trash' => __( 'Aucune Galeries trouvée dans la Corbeille', 'foogallery' ),
 						'menu_name'          => foogallery_plugin_name(),
-						'all_items'          => __( 'Galleries', 'foogallery' )
+						'all_items'          => __( 'Galeries', 'foogallery' )
 					),
 					'hierarchical'  => false,
 					'public'        => false,
@@ -43,6 +43,7 @@ if ( ! class_exists( 'FooGallery_PostTypes' ) ) {
 					'show_in_menu'  => true,
 					'menu_icon'     => 'dashicons-format-gallery',
 					'supports'      => array( 'title', 'thumbnail', ),
+					//'taxonomies'  => array( 'category' ),
 				)
 			);
 
