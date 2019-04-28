@@ -26,7 +26,7 @@
                             <a class="btn btn-light action-button" role="button" href="/wp-login.php">Connexion</a>
                             <? } else { ?>
                             <p class="text-center">Bonjour, <? echo wp_get_current_user()->user_login ?></p>
-                            <a class="login" href="#">Mon espace classe</a>
+                            <a class="login" href="<? echo site_url('/espace-perso') ?>">Mon espace classe</a>
                             <a class="login" href="<? echo wp_logout_url() ?>">Déconnexion</a>
                             <? } ?>
                         </span>
