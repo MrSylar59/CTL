@@ -35,7 +35,7 @@
             <?php
                 //autorisation d'acces
                 $user = wp_get_current_user();
-                $classe = get_user_meta($user->id, 'access', false);
+                $classe = get_user_meta($user->id, 'acces', false);
                 $categories = $wp_query->get_queried_object();
                 if (is_array($classe[0])) {
                     $autorisation = in_array($categories->slug, $classe[0]);

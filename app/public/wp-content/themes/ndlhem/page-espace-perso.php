@@ -22,7 +22,7 @@
 								</div><?
 							}
 						}else{
-							$classe = get_user_meta($user->id, 'access', false);
+							$classe = get_user_meta($user->id, 'acces', false);
 							foreach ($classe as $liste) {
 								foreach ($liste as $slug) {
 									echo $value;
