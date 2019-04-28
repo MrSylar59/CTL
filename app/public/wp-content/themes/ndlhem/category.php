@@ -5,17 +5,13 @@
         $( '#articles_btn' ).on( 'click', function(){
             document.getElementById('post_classe').style.display = "block";
             document.getElementById('post_circulaire').style.display = "none";
-            document.getElementById('post_gallery').style.display = "none";
             document.getElementById('circulaires_btn').classList.remove('active');
-            document.getElementById('gallerie_btn').classList.remove('active');
 
         })
         $( '#circulaires_btn' ).on( 'click', function(){
             document.getElementById('post_classe').style.display = "none";
             document.getElementById('post_circulaire').style.display = "block";
-            document.getElementById('post_gallery').style.display = "none";
             document.getElementById('articles_btn').classList.remove('active');
-            document.getElementById('gallerie_btn').classList.remove('active');
         })
     })
 </script>
