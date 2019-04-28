@@ -47,7 +47,7 @@
                     }
                 }
                 $user_roles = $user->roles;
-                $cat = get_cat_ID($categories->slug);
+                $cat = get_cat_ID($categories->name);
             ?>
             <div id="post_classe">
                 <div class="bg-blue text-center">

@@ -186,16 +186,12 @@ add_filter('redirect_post_location', 'ndl_on_post_redirect');
 
 // Fonction qui redirige vers la corbeille une fois qu'un événement a été supprimé
 function ndl_trash_redirect($post_id){
-    if (in_array('administrator', wp_get_current_user()->roles))
-        return;
-
-    switch (get_post_type($post_id)){
-        case 'event': 
-            wp_redirect(home_url('/events/'));
-        exit;
-        default: break;
-    }
-
-    return;
+    $cat = get_post($post_id)->post_category[0];
+    
+    if (get_post_type($post_id) == "event")
+        wp_redirect(home_url('/events'));
+    else 
+        wp_redirect(get_category_link($cat));
+    exit();
 }
 add_action('trashed_post', 'ndl_trash_redirect');

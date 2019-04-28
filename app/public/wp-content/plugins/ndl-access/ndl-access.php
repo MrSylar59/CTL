@@ -26,13 +26,13 @@ function ndl_usermeta_form_access($user){
                                 $name = $classe->name;
                                 $slug = $classe->slug;
                                 $checked = "";
-                                $meta = get_user_meta($user->ID, 'access')[0];
+                                $meta = get_user_meta($user->ID, 'acces')[0];
 
                                 if ($meta && in_array($slug, $meta))
                                     $checked = "checked";
 
                                 if ($slug != "uncategorized") {
-                                    echo "<li><input type='checkbox' id='$slug' name='access[]' value='$slug' style='margin-right:10px;' $checked>";
+                                    echo "<li><input type='checkbox' id='$slug' name='acces[]' value='$slug' style='margin-right:10px;' $checked>";
                                     echo "<label for='$slug' style='line-height:2em;'>$name</label></li>";
                                 }
                             }
@@ -58,8 +58,8 @@ function ndl_usermeta_access_update($user_id){
     // Mets à jour ou créer une nouvelle méta "access"
     return update_user_meta(
         $user_id,
-        'access',
-        $_POST["access"]
+        'acces',
+        $_POST["acces"]
     );
 }
 // Ajoute la fonction de sauvegarde sur les profils
