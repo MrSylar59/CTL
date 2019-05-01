@@ -10,8 +10,6 @@
 function ndl_post_types(){
     // On enregsitre les événements :
     register_post_type('event', [
-        'capability_type' => 'event',
-        'map_meta_cap' => true,
         'menu_icon' => 'dashicons-calendar-alt',
         'has_archive' => true,
         'public' => true,
@@ -31,8 +29,6 @@ function ndl_post_types(){
 
     // On enregistre les circulaires
     register_post_type('circulaire', [
-        'capability_type' => 'circulaire',
-        'map_meta_cap' => true,
         'menu_icon' => 'dashicons-media-document',
         'has_archive' => true,
         'public' => true, 
