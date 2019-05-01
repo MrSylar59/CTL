@@ -25,6 +25,8 @@
 							$classe = get_user_meta($user->id, 'acces', false);
 							foreach ($classe as $liste) {
 								foreach ($liste as $slug) {
+									if ($slug == "")
+										continue;
 									echo $value;
 									$category = get_category_by_slug($slug);?>
 									<div>
