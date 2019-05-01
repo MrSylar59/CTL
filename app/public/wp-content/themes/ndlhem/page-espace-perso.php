@@ -39,6 +39,10 @@
 	            				<h3 class="text-center">Les notes</h3>
 	            				Veuillez consultez les notes sur <a href="https://www.edumoov.com/">edumoov</a><?
 							}
+							else {?>
+								<h3 class="text-center">Album</h3>
+	            				Poster des photos sur <a href="<? echo admin_url("edit.php?post_type=foogallery") ?>">l'album</a><?
+							}
 						}
 					?>
 				<? }else{?>
