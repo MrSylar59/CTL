@@ -26,12 +26,6 @@
             <div class="bg-blue container">
                 <h2 class="text-center">Classe de <?php echo single_cat_title();?></h2>
             </div>
-            <div class="bg-blue container">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%">
-                    <button class="btn btn-info" id="articles_btn" style="width: 50%">Articles</button>
-                    <button class="btn btn-info" id="circulaires_btn" style="width: 50%">Circulaires</button> 
-                </div>
-            </div>
             <?php
                 //autorisation d'acces
                 $user = wp_get_current_user();
@@ -48,7 +42,31 @@
                 }
                 $user_roles = $user->roles;
                 $cat = get_cat_ID($categories->name);
+
+                if (!$autorisation){
+                    ?>
+
+                    <div class="bg-blue container">
+                        <div class="alert alert-secondary text-center">
+                            <h4>Oh, oh !</h4>
+                            <p>
+                                Il semblerait que vous n'ayez pas accès à ce contenu... <br>
+                                Vérifiez que vous êtes bien <a href="<? echo wp_login_url() ?>">connecté</a>.<br>
+                                Si le problème persiste, informez-en le webmaster.
+                            </p>
+                        </div>
+                    </div>
+
+                    <?php
+                    die();
+                }
             ?>
+            <div class="bg-blue container">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%">
+                    <button class="btn btn-info" id="articles_btn" style="width: 50%">Articles</button>
+                    <button class="btn btn-info" id="circulaires_btn" style="width: 50%">Circulaires</button> 
+                </div>
+            </div>
             <div id="post_classe">
                 <div class="bg-blue text-center">
                     <h2 class="center">Les Articles</h2>
