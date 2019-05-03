@@ -191,7 +191,7 @@
                                         <a class="btn btn-info m-4" href="<? echo get_edit_post_link(get_post()->ID) ?>">Modifier</a>
                             <?}?>
                         </div>
-                        <h2 class="pt-4 mb-3"><a href="<?php echo $url; ?>"><? the_title() ?></a>
+                        <h2 class="pt-4 mb-3"><a href="<?php echo $url; ?>" target="_blank"><? the_title() ?></a>
 
                         </h2>
                         <? echo $filename ?>

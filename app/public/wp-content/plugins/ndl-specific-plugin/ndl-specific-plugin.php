@@ -168,6 +168,10 @@ function ndl_on_post_redirect($location) {
                 wp_redirect(admin_url('/edit.php?post_type=' . get_post_type($match[1])));
                 exit;
             }
+            elseif (get_post_type($match[1]) == "foogallery"){
+                wp_redirect(admin_url('/edit.php?post_type=' . get_post_type($match[1]) . "-album"));
+                exit;
+            }
             else {
                 $pl = get_permalink($match[1]);
                 if ($pl) {
