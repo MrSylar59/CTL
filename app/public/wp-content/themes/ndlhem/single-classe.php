@@ -2,10 +2,11 @@
 
  <?php
     //autorisation d'acces
-	 if (is_user_logged_in()) {
+	if (is_user_logged_in()) {
 	 	$user = wp_get_current_user();
 	    $classe = get_user_meta($user->id, 'acces', false);
-	    $category = get_post()->post_category[0];
+	    $categories = get_the_category();
+	    $category = $categories[0]->slug;
 	    if (is_array($classe[0])) {
 	        $autorisation = in_array($category, $classe[0]);
 	    }else{
@@ -15,7 +16,6 @@
 	            $autorisation = false;
 	        }
 	    }
-    	echo $autorisation;
     	$user_roles = $user->roles;
 	    if ($autorisation || in_array("professeur",$user_roles) || in_array("administrator", $user_roles)) {
 		    while(have_posts()){
