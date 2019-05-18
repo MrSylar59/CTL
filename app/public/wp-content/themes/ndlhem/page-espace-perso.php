@@ -24,15 +24,19 @@
 						}else{
 							$classe = get_user_meta($user->id, 'acces', false);
 							foreach ($classe as $liste) {
-								foreach ($liste as $slug) {
-									if ($slug == "")
-										continue;
-									echo $value;
-									$category = get_category_by_slug($slug);?>
-									<div>
-										<? $cat_id = $category->term_id;?>
-										La classe de <a href="<?echo get_category_link($cat_id);?>"><?echo $category->name?></a>									
-									</div><?
+								if(is_array($liste)){
+									foreach ($liste as $slug) {
+										if ($slug == "")
+											continue;
+										echo $value;
+										$category = get_category_by_slug($slug);?>
+										<div>
+											<? $cat_id = $category->term_id;?>
+											La classe de <a href="<?echo get_category_link($cat_id);?>"><?echo $category->name?></a>									
+										</div><?
+									}
+								}else{
+									echo "Aucune classe n'est liée à votre compte si cela dure. Veuillez voir avec l'administration";
 								}
 							}
 							if (! in_array("professeur",$user_roles)) {?>
